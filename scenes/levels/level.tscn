@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciw3benw8lq5c"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_jrocf"]
+[ext_resource type="PackedScene" uid="uid://bs5vg7l2g8kh" path="res://scenes/popupscreen/popupscreen.tscn" id="2_4roxm"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_jrocf")
+
+[node name="popUpScreen" parent="." instance=ExtResource("2_4roxm")]
+position = Vector2(590, 496)
