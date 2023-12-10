@@ -1,0 +1,237 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbmee5ic4qmpo"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_6glir"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6glir")
+
+[node name="MainMenuButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -50.5
+offset_right = 107.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuButtonStart" type="Button" parent="MainMenuButtonContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="MainMenuButtonGoToOptions" type="Button" parent="MainMenuButtonContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="MainMenuButtonQuit" type="Button" parent="MainMenuButtonContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="OptionsMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsMenuBackToMainMenuButton" type="Button" parent="OptionsMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[node name="OptionsMenuButtonContainer" type="VBoxContainer" parent="OptionsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = -33.0
+offset_right = 107.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsMenuGoToVideoSubMenu" type="Button" parent="OptionsMenu/OptionsMenuButtonContainer"]
+layout_mode = 2
+text = "Video Settings"
+
+[node name="OptionsMenuGoToAudioSubMenu" type="Button" parent="OptionsMenu/OptionsMenuButtonContainer"]
+layout_mode = 2
+text = "Audio Settings"
+
+[node name="OptionsSubMenuForVideo" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoOptionsMenuBackToOptionMenuButton" type="Button" parent="OptionsSubMenuForVideo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[node name="VideoOptionsSettingsContainer" type="HBoxContainer" parent="OptionsSubMenuForVideo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -54.0
+offset_right = 79.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoOptionsSettingLabels" type="VBoxContainer" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VideoSettingLabelFullScreen" type="Label" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingLabels"]
+layout_mode = 2
+text = "Full-Screen"
+
+[node name="VideoSettingLabelAlwaysOnTop" type="Label" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingLabels"]
+layout_mode = 2
+text = "Always on Top"
+
+[node name="VideoSettingLabelVSync" type="Label" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingLabels"]
+layout_mode = 2
+text = "VSync"
+
+[node name="VideoSettingLabelBorderless" type="Label" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingLabels"]
+layout_mode = 2
+text = "Borderless"
+
+[node name="VideoOptionsSettingCheckBoxes" type="VBoxContainer" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VideoSettingCheckBoxFullScreen" type="CheckBox" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes"]
+layout_mode = 2
+
+[node name="VideoSettingCheckBoxAlwaysOnTop" type="CheckBox" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes"]
+layout_mode = 2
+
+[node name="VideoSettingCheckBoxVSync" type="CheckBox" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes"]
+layout_mode = 2
+
+[node name="VideoSettingCheckBoxBorderless" type="CheckBox" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes"]
+layout_mode = 2
+
+[node name="OptionsSubMenuForAudio" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioOptionsMenuBackToOptionMenuButton" type="Button" parent="OptionsSubMenuForAudio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[node name="AudioOptionsButtonContainer" type="HBoxContainer" parent="OptionsSubMenuForAudio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioOptionsSettingLabels" type="VBoxContainer" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer"]
+layout_mode = 2
+
+[node name="AudioSettingLabelMasterVolume" type="Label" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingLabels"]
+layout_mode = 2
+text = "Borderless"
+
+[node name="AudioSettingLabelMusicVolume" type="Label" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingLabels"]
+layout_mode = 2
+text = "Borderless"
+
+[node name="AudioSettingLabelSoundFXVolume" type="Label" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingLabels"]
+layout_mode = 2
+text = "Borderless"
+
+[node name="AudioOptionsSettingSlider" type="VBoxContainer" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AudioSettingSliderMasterVolume" type="HSlider" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider"]
+layout_mode = 2
+
+[node name="AudioSettingSliderMusicVolume" type="HSlider" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider"]
+layout_mode = 2
+
+[node name="AudioSettingSliderSoundFXVolume" type="HSlider" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider"]
+layout_mode = 2
+
+[connection signal="pressed" from="MainMenuButtonContainer/MainMenuButtonStart" to="." method="_on_main_menu_button_start_pressed"]
+[connection signal="pressed" from="MainMenuButtonContainer/MainMenuButtonGoToOptions" to="." method="_on_main_menu_button_go_to_options_pressed"]
+[connection signal="pressed" from="MainMenuButtonContainer/MainMenuButtonQuit" to="." method="_on_main_menu_button_quit_pressed"]
+[connection signal="pressed" from="OptionsMenu/OptionsMenuBackToMainMenuButton" to="." method="_on_options_menu_back_to_main_menu_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/OptionsMenuButtonContainer/OptionsMenuGoToVideoSubMenu" to="." method="_on_options_menu_go_to_video_sub_menu_pressed"]
+[connection signal="pressed" from="OptionsMenu/OptionsMenuButtonContainer/OptionsMenuGoToAudioSubMenu" to="." method="_on_options_menu_go_to_audio_sub_menu_pressed"]
+[connection signal="pressed" from="OptionsSubMenuForVideo/VideoOptionsMenuBackToOptionMenuButton" to="." method="_on_video_options_menu_back_to_option_menu_button_pressed"]
+[connection signal="toggled" from="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes/VideoSettingCheckBoxFullScreen" to="." method="_on_video_setting_check_box_full_screen_toggled"]
+[connection signal="toggled" from="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes/VideoSettingCheckBoxAlwaysOnTop" to="." method="_on_video_setting_check_box_always_on_top_toggled"]
+[connection signal="toggled" from="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes/VideoSettingCheckBoxVSync" to="." method="_on_video_setting_check_box_v_sync_toggled"]
+[connection signal="toggled" from="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes/VideoSettingCheckBoxBorderless" to="." method="_on_video_setting_check_box_borderless_toggled"]
+[connection signal="pressed" from="OptionsSubMenuForAudio/AudioOptionsMenuBackToOptionMenuButton" to="." method="_on_audio_options_menu_back_to_option_menu_button_pressed"]
+[connection signal="value_changed" from="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider/AudioSettingSliderMasterVolume" to="." method="_on_audio_setting_slider_master_volume_value_changed"]
+[connection signal="value_changed" from="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider/AudioSettingSliderMusicVolume" to="." method="_on_audio_setting_slider_music_volume_value_changed"]
+[connection signal="value_changed" from="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider/AudioSettingSliderSoundFXVolume" to="." method="_on_audio_setting_slider_sound_fx_volume_value_changed"]
