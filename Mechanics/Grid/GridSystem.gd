@@ -1,6 +1,6 @@
 extends Node2D
 
-var rows = 20
+var rows = 13
 var columns = 30
 var cell_size = Vector2(64, 64)
 
@@ -34,9 +34,9 @@ func handle_click(position):
 		toggle_texture(cell)
 
 func toggle_texture(cell):
-	if cell.texture == cell_texture:
+	if GameData.selectedBlock == 1:
 		cell.texture = alternate_texture
-	else:
+	elif GameData.selectedBlock == 2:
 		cell.texture = cell_texture
 
 func create_cell(row, column):
