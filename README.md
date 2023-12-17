@@ -5,13 +5,13 @@ So you think you know how to make a nice game. Think again! Games are complex in
 
 This course examines the ways in which game design decisions affect our emotions, our cognition, our motivation, and subsequently help shape our attitude. And above all, how you can use this knowledge in order to create compelling experiences that teaches the user valuable real world lessons and changes the way they perceive the world. All through the power of play!
 
-## Game Dev Team 14
-- Jelte Schuurmans
-- Joep Hamers
-- Paul Michielsen
-- Tygo van den Hurk
-- Willem van den Brink
+### Game Dev Team 14
+- [**Jelte Schuurmans**](mailto:j.j.w.schuurmans@student.tue.nl) (???????)
+- [**Joep Hamers**](mailto:j.hamers@student.tue.nl) (???????)
+- [**Paul Michielsen**](mailto:p.j.c.michielsen@student.tue.nl) (???????)
+- [**Tygo van den Hurk**](mailto:t.j.f.h.v.d.hurk@student.tue.nl) (1705709)
+- [**Willem van den Brink**](mailto:w.h.v.d.brink@student.tue.nl) (1551388)
 
-## Game
+### Game
 This our serious game  
 (▀̿Ĺ̯▀̿ ̿)
