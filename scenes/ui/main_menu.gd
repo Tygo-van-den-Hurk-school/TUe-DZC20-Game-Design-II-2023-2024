@@ -10,8 +10,8 @@ func toggle() -> void:
 	
 func show_and_hide(thing_to_show, thing_to_hide) -> void:
 	# shows the first parameter and hides the second
-	print("showed:  " + thing_to_show)
-	print("and hid: " + thing_to_hide)
+	thing_to_show.show()
+	thing_to_hide.hide()
 	
 func _process(_delta) -> void:
 	# When ever ESC is pressed we toggle this menu	
@@ -72,7 +72,7 @@ func _on_video_setting_check_box_v_sync_toggled(toggled_on:bool) -> void:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 	
 func _on_video_setting_check_box_borderless_toggled(toggled_on:bool) -> void:
-	# OS.window_borderless = toggled_on # TODO can't seem to get this working
+	#OS.window_borderless = toggled_on # TODO can't seem to get this working
 	pass 
 	
 ###############################################################################

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbmee5ic4qmpo"]
+[gd_scene load_steps=3 format=3 uid="uid://dbmee5ic4qmpo"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_6glir"]
+[ext_resource type="Theme" uid="uid://cx2dhiff8dxbr" path="res://graphics/baseTheme.tres" id="1_loql8"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="2_67673"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,7 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6glir")
+theme = ExtResource("1_loql8")
+script = ExtResource("2_67673")
 
 [node name="MainMenuButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -24,17 +26,21 @@ offset_right = 107.0
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_loql8")
 
 [node name="MainMenuButtonStart" type="Button" parent="MainMenuButtonContainer"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "Start"
 
 [node name="MainMenuButtonGoToOptions" type="Button" parent="MainMenuButtonContainer"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "Options"
 
 [node name="MainMenuButtonQuit" type="Button" parent="MainMenuButtonContainer"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "Quit"
 
 [node name="OptionsMenu" type="Control" parent="."]
@@ -45,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_loql8")
 
 [node name="OptionsMenuBackToMainMenuButton" type="Button" parent="OptionsMenu"]
 layout_mode = 1
@@ -58,6 +65,7 @@ offset_top = -8.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("1_loql8")
 text = "Back"
 
 [node name="OptionsMenuButtonContainer" type="VBoxContainer" parent="OptionsMenu"]
@@ -73,13 +81,16 @@ offset_right = 107.5
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_loql8")
 
 [node name="OptionsMenuGoToVideoSubMenu" type="Button" parent="OptionsMenu/OptionsMenuButtonContainer"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "Video Settings"
 
 [node name="OptionsMenuGoToAudioSubMenu" type="Button" parent="OptionsMenu/OptionsMenuButtonContainer"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "Audio Settings"
 
 [node name="OptionsSubMenuForVideo" type="Control" parent="."]
@@ -90,6 +101,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_loql8")
 
 [node name="VideoOptionsMenuBackToOptionMenuButton" type="Button" parent="OptionsSubMenuForVideo"]
 layout_mode = 1
@@ -103,6 +115,7 @@ offset_top = -8.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("1_loql8")
 text = "Back"
 
 [node name="VideoOptionsSettingsContainer" type="HBoxContainer" parent="OptionsSubMenuForVideo"]
@@ -118,42 +131,53 @@ offset_right = 79.0
 offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_loql8")
 
 [node name="VideoOptionsSettingLabels" type="VBoxContainer" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme = ExtResource("1_loql8")
 
 [node name="VideoSettingLabelFullScreen" type="Label" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingLabels"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "Full-Screen"
 
 [node name="VideoSettingLabelAlwaysOnTop" type="Label" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingLabels"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "Always on Top"
 
 [node name="VideoSettingLabelVSync" type="Label" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingLabels"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "VSync"
 
 [node name="VideoSettingLabelBorderless" type="Label" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingLabels"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 text = "Borderless"
 
 [node name="VideoOptionsSettingCheckBoxes" type="VBoxContainer" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("1_loql8")
 
 [node name="VideoSettingCheckBoxFullScreen" type="CheckBox" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 
 [node name="VideoSettingCheckBoxAlwaysOnTop" type="CheckBox" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 
 [node name="VideoSettingCheckBoxVSync" type="CheckBox" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 
 [node name="VideoSettingCheckBoxBorderless" type="CheckBox" parent="OptionsSubMenuForVideo/VideoOptionsSettingsContainer/VideoOptionsSettingCheckBoxes"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 
 [node name="OptionsSubMenuForAudio" type="Control" parent="."]
 visible = false
@@ -163,6 +187,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_loql8")
 
 [node name="AudioOptionsMenuBackToOptionMenuButton" type="Button" parent="OptionsSubMenuForAudio"]
 layout_mode = 1
@@ -176,6 +201,7 @@ offset_top = -8.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("1_loql8")
 text = "Back"
 
 [node name="AudioOptionsButtonContainer" type="HBoxContainer" parent="OptionsSubMenuForAudio"]
@@ -185,40 +211,58 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -142.5
+offset_top = -38.5
+offset_right = 142.5
+offset_bottom = 38.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_loql8")
+alignment = 1
 
 [node name="AudioOptionsSettingLabels" type="VBoxContainer" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer"]
 layout_mode = 2
+theme = ExtResource("1_loql8")
 
 [node name="AudioSettingLabelMasterVolume" type="Label" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingLabels"]
 layout_mode = 2
-text = "Borderless"
+theme = ExtResource("1_loql8")
+text = "Master Volume"
 
 [node name="AudioSettingLabelMusicVolume" type="Label" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingLabels"]
 layout_mode = 2
-text = "Borderless"
+theme = ExtResource("1_loql8")
+text = "Music Volume"
 
 [node name="AudioSettingLabelSoundFXVolume" type="Label" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingLabels"]
 layout_mode = 2
-text = "Borderless"
+theme = ExtResource("1_loql8")
+text = "Sound FX Volume      "
 
 [node name="AudioOptionsSettingSlider" type="VBoxContainer" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer"]
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.66
+theme = ExtResource("1_loql8")
+alignment = 2
 
 [node name="AudioSettingSliderMasterVolume" type="HSlider" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider"]
 layout_mode = 2
+size_flags_vertical = 7
+theme = ExtResource("1_loql8")
+value = 100.0
 
 [node name="AudioSettingSliderMusicVolume" type="HSlider" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider"]
 layout_mode = 2
+size_flags_vertical = 7
+theme = ExtResource("1_loql8")
+value = 100.0
 
 [node name="AudioSettingSliderSoundFXVolume" type="HSlider" parent="OptionsSubMenuForAudio/AudioOptionsButtonContainer/AudioOptionsSettingSlider"]
 layout_mode = 2
+size_flags_vertical = 7
+theme = ExtResource("1_loql8")
+value = 100.0
 
 [connection signal="pressed" from="MainMenuButtonContainer/MainMenuButtonStart" to="." method="_on_main_menu_button_start_pressed"]
 [connection signal="pressed" from="MainMenuButtonContainer/MainMenuButtonGoToOptions" to="." method="_on_main_menu_button_go_to_options_pressed"]
