@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk1fs3ltygobx"
-path="res://.godot/imported/PopUpInfoBox.png-0fa467e37ef4d84744bc7272f54a4d0a.ctex"
+uid="uid://ulivll2pd6oa"
+path="res://.godot/imported/Tileset_Wood.png-040b705501a32be7719a68bdd576297b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/PopUpInfoBox.png"
-dest_files=["res://.godot/imported/PopUpInfoBox.png-0fa467e37ef4d84744bc7272f54a4d0a.ctex"]
+source_file="res://Assets/Game Assets/Materials/Tileset_Wood.png"
+dest_files=["res://.godot/imported/Tileset_Wood.png-040b705501a32be7719a68bdd576297b.ctex"]
 
 [params]
 

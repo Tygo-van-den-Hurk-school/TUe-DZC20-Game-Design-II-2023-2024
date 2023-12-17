@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk1fs3ltygobx"
-path="res://.godot/imported/PopUpInfoBox.png-0fa467e37ef4d84744bc7272f54a4d0a.ctex"
+uid="uid://dqndvv4dostem"
+path="res://.godot/imported/Tileset_Stone.png-d65cc2d45ef40194fbce06514aee7dc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/PopUpInfoBox.png"
-dest_files=["res://.godot/imported/PopUpInfoBox.png-0fa467e37ef4d84744bc7272f54a4d0a.ctex"]
+source_file="res://Assets/Game Assets/Materials/Tileset_Stone.png"
+dest_files=["res://.godot/imported/Tileset_Stone.png-d65cc2d45ef40194fbce06514aee7dc0.ctex"]
 
 [params]
 
