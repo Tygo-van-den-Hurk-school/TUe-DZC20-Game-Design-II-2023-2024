@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2ersgc170tw7"]
 
-[ext_resource type="Script" path="res://BuildingUI.gd" id="1_uhjne"]
+[ext_resource type="Script" path="res://Mechanics/Building UI/BuildingUI.gd" id="1_uhjne"]
 
 [node name="BuildingUI" type="Control"]
 custom_minimum_size = Vector2(0, 200)
