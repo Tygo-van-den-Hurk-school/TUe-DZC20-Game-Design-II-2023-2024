@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bs5vg7l2g8kh"]
 
 [ext_resource type="Script" path="res://scenes/popupscreen/popupscreen.gd" id="1_ubthj"]
-[ext_resource type="Texture2D" uid="uid://bk1fs3ltygobx" path="res://Graphics/PopUpInfoBox.png" id="2_txr6x"]
-[ext_resource type="Texture2D" uid="uid://bqsfhnc8rsu3w" path="res://Graphics/OK button.png" id="3_l53iu"]
+[ext_resource type="Texture2D" uid="uid://bk1fs3ltygobx" path="res://graphics/PopUpInfoBox.png" id="2_txr6x"]
+[ext_resource type="Texture2D" uid="uid://bqsfhnc8rsu3w" path="res://graphics/OK button.png" id="3_l53iu"]
 [ext_resource type="Script" path="res://scenes/popupscreen/button/Label.gd" id="4_vg2e8"]
 
 [node name="popUpScreen" type="Node2D"]

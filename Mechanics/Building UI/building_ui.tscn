@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://2ersgc170tw7"]
+[gd_scene load_steps=3 format=3 uid="uid://2ersgc170tw7"]
 
 [ext_resource type="Script" path="res://Mechanics/Building UI/BuildingUI.gd" id="1_uhjne"]
+[ext_resource type="AudioStream" uid="uid://c5l0kn58ifxbe" path="res://Sound/sfx/mixkit-wood-hard-hit-2182.ogg" id="2_ulx8a"]
 
 [node name="BuildingUI" type="Control"]
 custom_minimum_size = Vector2(0, 200)
@@ -49,3 +50,7 @@ text = "Stone Beam Horizontal"
 [node name="Button6" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Stone Beam Vertical"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ulx8a")
+volume_db = -6.0
