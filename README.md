@@ -39,18 +39,20 @@ some examples of these pop-ups are:
 	<li>
 		<pre>
 			<code>
-			Structural integretie low
-			It appears that the structure is unstable. You can fix this by reinforcing the part that crashed.
-			Try enforing the area and try again. Click "OK" to continue.
+				Structural integretie low
+				It appears that the structure is unstable. You can fix this 
+				by reinforcing the part that crashed. Try enforing the area 
+				and try again. Click "OK" to continue.
 			</code>
 		</pre>
 	</li>
 	<li>
 		<pre>
 			<code>
-					Out of Balance
-					It appears that the structure is unstable. You can fix this by reinforcing the part where the structure is moving.
-					Try enforing the area and try again. Click "OK" to continue.
+				Out of Balance
+				It appears that the structure is unstable. You can fix this by
+				reinforcing the part where the structure is moving. Try 
+				enforing the area and try again. Click "OK" to continue.
 			</code>
 		</pre>
 	</li>
@@ -58,8 +60,10 @@ some examples of these pop-ups are:
 		<pre>
 			<code>
 				bending Materials
-				It appears that the structure is unstable. You can fix this by reinforcing the area where material is bending beyond a reasonable messure. 
-				Try enforing the area and try again. Click "OK" to continue.
+				It appears that the structure is unstable. You can fix this by
+				reinforcing the area where material is bending beyond a 
+				reasonable messure. Try enforing the area and try again. Click
+				"OK" to continue.
 			</code>
 		</pre>
 	</li>
@@ -67,8 +71,10 @@ some examples of these pop-ups are:
 		<pre>
 			<code>
 				Foundation Issues
-				It appears that the structure is unstable. You can fix this by reinforcing the foundation where there are signs of instability. 
-				Strengthening the base should help stabilize the entire structure. Click "OK" to proceed. 
+				It appears that the structure is unstable. You can fix this by
+				reinforcing the foundation where there are signs of instability.
+				Strengthening the base should help stabilize the entire
+				structure. Click "OK" to proceed. 
 			</code>
 		</pre>
 	</li>
