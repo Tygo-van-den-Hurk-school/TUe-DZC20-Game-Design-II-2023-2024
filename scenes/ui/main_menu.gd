@@ -62,19 +62,17 @@ func _on_video_setting_check_box_full_screen_toggled(toggled_on:bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
 func _on_video_setting_check_box_always_on_top_toggled(toggled_on:bool) -> void:
-	# DisplayServer.window_set_always_top # TODO can't seem to get this working
-	pass
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_ALWAYS_ON_TOP, toggled_on)
 	
 func _on_video_setting_check_box_v_sync_toggled(toggled_on:bool) -> void:
 	if toggled_on:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-	
+		
 func _on_video_setting_check_box_borderless_toggled(toggled_on:bool) -> void:
-	#OS.window_borderless = toggled_on # TODO can't seem to get this working
-	pass 
-	
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, toggled_on)
+
 ###############################################################################
 #                              Audio Options Menu                             #
 ###############################################################################
