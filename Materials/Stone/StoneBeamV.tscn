@@ -8,6 +8,7 @@
 [node name="Stone1" type="RigidBody2D"]
 script = ExtResource("1_m4uoj")
 sprite_texture = ExtResource("2_b0f4e")
+collision_shape_size = Vector2(16, 64)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
