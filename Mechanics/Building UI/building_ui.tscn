@@ -22,11 +22,30 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="HBoxContainer"]
-modulate = Color(1, 0, 0, 1)
+[node name="Button0" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Material 1"
+text = "Delete"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Wooden Block"
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Material 2"
+text = "Wooden beam Horizontal"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Wooden Beam Vertical"
+
+[node name="Button4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Stone Block"
+
+[node name="Button5" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Stone Beam Horizontal"
+
+[node name="Button6" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Stone Beam Vertical"
