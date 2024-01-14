@@ -14,6 +14,9 @@ var stoneBeamV = preload("res://Assets/Game Assets/StoneSprites/stone-beam-wide-
 
 var cells = []
 var transform_done = false
+var joint
+
+var global_joint_position
 
 func _ready():
 	setup_grid()
@@ -89,10 +92,21 @@ func transform_grid():
 			else:
 				cells_to_delete.append(cell)
 	delete_cells(cells_to_delete)
+	connect_adjacent_objects_with_joints()
 
 func replace_cell(old_cell, new_cell):
-	old_cell.get_parent().add_child(new_cell)
+	var parent = old_cell.get_parent()
+	parent.add_child(new_cell)
 	new_cell.global_position = old_cell.global_position
+
+	# Find the position of the old cell in the cells array
+	var row = int(old_cell.position.y / cell_size.y)
+	var column = int(old_cell.position.x / cell_size.x)
+	
+	# Update the cells array with the new cell
+	if row >= 0 and row < rows and column >= 0 and column < columns:
+		cells[row][column] = new_cell
+
 	old_cell.queue_free()
 
 func delete_cells(cells_to_delete):
@@ -105,4 +119,35 @@ func create_cell(row, column):
 	cell.position = Vector2(column * cell_size.x, row * cell_size.y)
 	cell.set_offset(cell_size / 2)
 	return cell
+
+func connect_adjacent_objects_with_joints():
+	for row in range(rows):
+		for column in range(columns):
+			var current_cell = cells[row][column]
+			# Check if current cell is a RigidBody2D and is in the scene tree
+			if current_cell is RigidBody2D and current_cell.is_inside_tree():
+				# Connect to right neighbor if it's a valid RigidBody2D
+				if column < columns - 1:
+					var right_neighbor = cells[row][column + 1]
+					if right_neighbor is RigidBody2D and right_neighbor.is_inside_tree():
+						create_joint(current_cell, right_neighbor)
+				# Connect to bottom neighbor if it's a valid RigidBody2D
+				if row < rows - 1:
+					var bottom_neighbor = cells[row + 1][column]
+					if bottom_neighbor is RigidBody2D and bottom_neighbor.is_inside_tree():
+						create_joint(current_cell, bottom_neighbor)
+
+
+func create_joint(body_a, body_b):
+	var joint = PinJoint2D.new()
+	var root_node = get_tree().get_root()
+	root_node.add_child(joint)
+	joint.node_a = body_a.get_path()
+	joint.node_b = body_b.get_path()
+	joint.softness = 0  # Makes the joint more rigid
+	joint.angular_limit_enabled = true  # Enables angular limits
+	joint.angular_limit_lower = 0  # Lower limit of rotation in radians
+	joint.angular_limit_upper = 0  # Upper limit of rotation in radians
+
+
 
