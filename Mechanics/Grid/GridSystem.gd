@@ -63,36 +63,54 @@ func toggle_texture(cell):
 
 func transform_grid():
 	var cells_to_delete = []
-	for row in cells:
-		for cell in row:
+	var new_cells = []
+	# Initialize new_cells as a 2D array
+	for i in range(rows):
+		new_cells.append([])
+		for j in range(columns):
+			new_cells[i].append(null)
+	
+	# Start from the bottom row and move upwards
+	for row_index in range(rows - 1, -1, -1):
+		for column_index in range(columns):
+			var cell = cells[row_index][column_index]
+			var new_cell_scene
+			var is_static = false
+			# Bottom row is always static
+			if row_index == rows - 1:
+				is_static = true
+			else:
+				# Check if the cell below is static
+				var cell_below = new_cells[row_index + 1][column_index]
+				if cell_below is StaticBody2D:
+					is_static = true
+
+			# Determine the scene to instantiate based on the cell's texture and whether it's static
 			if cell.texture == woodBlock:
-				var new_cell_scene = preload("res://Materials/Wood/Wood1.tscn")
-				var new_cell = new_cell_scene.instantiate()
-				replace_cell(cell, new_cell)
+				if is_static:
+					new_cell_scene = preload("res://Materials/Wood/staticWood.tscn")
+				else:
+					new_cell_scene = preload("res://Materials/Wood/Wood1.tscn")
 			elif cell.texture == woodBeamH:
-				var new_cell_scene = preload("res://Materials/Wood/WoodBeamH.tscn")
-				var new_cell = new_cell_scene.instantiate()
-				replace_cell(cell, new_cell)
+				new_cell_scene = preload("res://Materials/Wood/WoodBeamH.tscn") # Assuming same scene for both static and dynamic for now
 			elif cell.texture == woodBeamV:
-				var new_cell_scene = preload("res://Materials/Wood/WoodBeamV.tscn")
-				var new_cell = new_cell_scene.instantiate()
-				replace_cell(cell, new_cell)
+				new_cell_scene = preload("res://Materials/Wood/WoodBeamV.tscn") # Adjust as necessary
 			elif cell.texture == stoneBlock:
-				var new_cell_scene = preload("res://Materials/Stone/Stone1.tscn")
-				var new_cell = new_cell_scene.instantiate()
-				replace_cell(cell, new_cell)
+				new_cell_scene = preload("res://Materials/Stone/Stone1.tscn")
 			elif cell.texture == stoneBeamH:
-				var new_cell_scene = preload("res://Materials/Stone/StoneBeamH.tscn")
-				var new_cell = new_cell_scene.instantiate()
-				replace_cell(cell, new_cell)
+				new_cell_scene = preload("res://Materials/Stone/StoneBeamH.tscn") # Adjust as necessary
 			elif cell.texture == stoneBeamV:
-				var new_cell_scene = preload("res://Materials/Stone/StoneBeamV.tscn")
-				var new_cell = new_cell_scene.instantiate()
-				replace_cell(cell, new_cell)
+				new_cell_scene = preload("res://Materials/Stone/StoneBeamV.tscn") # Adjust as necessary
 			else:
 				cells_to_delete.append(cell)
+				continue
+
+			var new_cell = new_cell_scene.instantiate()
+			replace_cell(cell, new_cell)
+			new_cells[row_index][column_index] = new_cell
 	delete_cells(cells_to_delete)
 	connect_adjacent_objects_with_joints()
+
 
 func replace_cell(old_cell, new_cell):
 	var parent = old_cell.get_parent()
@@ -125,29 +143,39 @@ func connect_adjacent_objects_with_joints():
 		for column in range(columns):
 			var current_cell = cells[row][column]
 			# Check if current cell is a RigidBody2D and is in the scene tree
-			if current_cell is RigidBody2D and current_cell.is_inside_tree():
+			if (current_cell is RigidBody2D or current_cell is StaticBody2D) and current_cell.is_inside_tree():
 				# Connect to right neighbor if it's a valid RigidBody2D
 				if column < columns - 1:
 					var right_neighbor = cells[row][column + 1]
-					if right_neighbor is RigidBody2D and right_neighbor.is_inside_tree():
+					if (right_neighbor is RigidBody2D or right_neighbor is StaticBody2D) and right_neighbor.is_inside_tree():
 						create_joint(current_cell, right_neighbor)
 				# Connect to bottom neighbor if it's a valid RigidBody2D
 				if row < rows - 1:
 					var bottom_neighbor = cells[row + 1][column]
-					if bottom_neighbor is RigidBody2D and bottom_neighbor.is_inside_tree():
+					if (bottom_neighbor is RigidBody2D or bottom_neighbor is StaticBody2D) and bottom_neighbor.is_inside_tree():
 						create_joint(current_cell, bottom_neighbor)
 
 
 func create_joint(body_a, body_b):
+	print("A: " + str(body_a.get_path()))
+	print("B: " + str(body_b.get_path()))
+	
 	var joint = PinJoint2D.new()
-	var root_node = get_tree().get_root()
-	root_node.add_child(joint)
+	body_a.add_child(joint)
 	joint.node_a = body_a.get_path()
 	joint.node_b = body_b.get_path()
-	joint.softness = 0  # Makes the joint more rigid
+	
+	joint.disable_collision = false
+
+	
+	print("JointA:" + str(joint.node_a))
+	print("JointB:" + str(joint.node_b))
+	
+	
+	joint.softness = 0.5  # Makes the joint more rigid
 	joint.angular_limit_enabled = true  # Enables angular limits
-	joint.angular_limit_lower = 0  # Lower limit of rotation in radians
-	joint.angular_limit_upper = 0  # Upper limit of rotation in radians
+	#joint.angular_limit_lower = 0  # Lower limit of rotation in radians
+	#joint.angular_limit_upper = 0  # Upper limit of rotation in radians
 
 
 

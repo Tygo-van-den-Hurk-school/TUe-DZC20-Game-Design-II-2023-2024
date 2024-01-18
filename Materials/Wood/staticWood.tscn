@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://vknjys0602a5"]
+
+[ext_resource type="Script" path="res://Materials/Wood/staticWood.gd" id="1_2h18t"]
+[ext_resource type="Texture2D" uid="uid://ccv2c1ofryc6" path="res://Assets/Game Assets/WoodSprites/wood-wall.png" id="2_67ujc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qsac"]
+
+[node name="Stone1" type="StaticBody2D"]
+script = ExtResource("1_2h18t")
+sprite_texture = ExtResource("2_67ujc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2qsac")
