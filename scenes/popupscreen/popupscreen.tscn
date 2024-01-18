@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scenes/popupscreen/button/Label.gd" id="4_vg2e8"]
 
 [node name="popUpScreen" type="Node2D"]
+z_index = 5
+position = Vector2(500, 500)
 script = ExtResource("1_ubthj")
 
 [node name="DialogBox" type="Sprite2D" parent="."]
@@ -15,15 +17,13 @@ texture = ExtResource("2_txr6x")
 position = Vector2(328, 311)
 texture = ExtResource("3_l53iu")
 
-[node name="ButtonLabel" type="Label" parent="DialogBox/Button"]
+[node name="ButtonLabel" type="Button" parent="DialogBox/Button"]
 offset_left = -87.0
 offset_top = -32.0
 offset_right = 87.0
 offset_bottom = 32.0
 theme_override_font_sizes/font_size = 35
 text = "LET'S GO"
-horizontal_alignment = 1
-vertical_alignment = 1
 script = ExtResource("4_vg2e8")
 
 [node name="LevelTitle" type="Label" parent="DialogBox"]
@@ -31,16 +31,23 @@ offset_left = -426.0
 offset_top = -366.0
 offset_right = 426.0
 offset_bottom = -309.0
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 80
 text = "LEVEL 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LevelInfo" type="Label" parent="DialogBox"]
-offset_left = -434.0
-offset_top = -293.0
-offset_right = 436.0
-offset_bottom = 216.0
-theme_override_font_sizes/font_size = 25
-text = "Information about background of the structure, the problem, and the assignment for the player"
+offset_left = -439.0
+offset_top = -154.0
+offset_right = 431.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 40
+text = "Test 1"
 autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[connection signal="pressed" from="DialogBox/Button/ButtonLabel" to="." method="_on_button_label_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
