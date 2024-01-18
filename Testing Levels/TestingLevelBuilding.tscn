@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5q0v5wl5yfcd"]
+[gd_scene load_steps=5 format=3 uid="uid://b5q0v5wl5yfcd"]
 
 [ext_resource type="PackedScene" uid="uid://mp45pfevke23" path="res://Mechanics/Grid/GridSystem.tscn" id="1_wpx5r"]
 [ext_resource type="PackedScene" uid="uid://2ersgc170tw7" path="res://Mechanics/Building UI/building_ui.tscn" id="2_uxoyk"]
+[ext_resource type="Texture2D" uid="uid://4jpiagpaysql" path="res://Assets/Game Assets/Misc/background-v0.1.png" id="3_5jolu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bklqu"]
 size = Vector2(1929, 6.5)
@@ -22,5 +23,12 @@ layout_mode = 1
 [node name="floor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-position = Vector2(962.5, 869.25)
+position = Vector2(962.5, 832)
 shape = SubResource("RectangleShape2D_bklqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("3_5jolu")
+centered = false
+offset = Vector2(-104, -350)
