@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5q0v5wl5yfcd"]
+[gd_scene load_steps=6 format=3 uid="uid://b5q0v5wl5yfcd"]
 
+[ext_resource type="Script" path="res://Testing Levels/TestingLevelBuilding.gd" id="1_5bb0m"]
 [ext_resource type="PackedScene" uid="uid://mp45pfevke23" path="res://Mechanics/Grid/GridSystem.tscn" id="1_wpx5r"]
 [ext_resource type="PackedScene" uid="uid://2ersgc170tw7" path="res://Mechanics/Building UI/building_ui.tscn" id="2_uxoyk"]
 [ext_resource type="Texture2D" uid="uid://4jpiagpaysql" path="res://Assets/Game Assets/Misc/background-v0.1.png" id="3_5jolu"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5bb0m")
 
 [node name="BuildingUI" parent="." instance=ExtResource("2_uxoyk")]
 layout_mode = 1

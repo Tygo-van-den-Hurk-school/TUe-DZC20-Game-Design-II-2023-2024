@@ -38,6 +38,7 @@ func _input(event):
 	elif event.is_action_pressed("spacebar") and not transform_done:
 		transform_grid()
 		transform_done = true
+		GameData.physicsMode = true
 
 #Defines the premade map
 func is_indestructible(row, column):
