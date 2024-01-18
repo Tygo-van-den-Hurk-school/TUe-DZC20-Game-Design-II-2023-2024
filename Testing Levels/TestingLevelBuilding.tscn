@@ -23,7 +23,7 @@ layout_mode = 1
 [node name="floor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-position = Vector2(962.5, 832)
+position = Vector2(962.5, 798)
 shape = SubResource("RectangleShape2D_bklqu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

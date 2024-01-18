@@ -9,6 +9,7 @@
 script = ExtResource("1_trwmh")
 sprite_texture = ExtResource("2_bww7g")
 collision_shape_size = Vector2(64, 16)
+horizontal = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

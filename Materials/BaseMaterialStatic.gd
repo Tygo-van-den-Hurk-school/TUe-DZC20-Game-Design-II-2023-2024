@@ -4,6 +4,8 @@ extends StaticBody2D
 @export var sprite_texture : Texture
 @export var weight : float = 1.0
 @export var collision_shape_size : Vector2 = Vector2(64, 64)
+@export var vertical : bool = false
+@export var horizontal : bool = false
 var is_physics_object = true
 
 # Called when the node enters the scene tree for the first time.

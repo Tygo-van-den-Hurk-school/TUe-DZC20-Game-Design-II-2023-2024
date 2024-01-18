@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkg126p7gkywt"]
+
+[ext_resource type="Script" path="res://Materials/Wood/staticWood.gd" id="1_01hri"]
+[ext_resource type="Texture2D" uid="uid://ciuttqhtqj6gi" path="res://Assets/Game Assets/StoneSprites/stone-beam-wide.png" id="2_jiulj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qsac"]
+
+[node name="Stone1" type="StaticBody2D"]
+script = ExtResource("1_01hri")
+sprite_texture = ExtResource("2_jiulj")
+collision_shape_size = Vector2(64, 16)
+horizontal = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2qsac")

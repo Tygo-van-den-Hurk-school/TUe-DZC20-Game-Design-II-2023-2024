@@ -26,6 +26,8 @@ func setup_grid():
 		var row_cells = []
 		for column in range(columns):
 			var cell = create_cell(row, column)
+			if is_indestructible(row, column):
+				cell.texture = stoneBlock  # Set the texture for indestructible cells
 			add_child(cell)
 			row_cells.append(cell)
 		cells.append(row_cells)
@@ -37,11 +39,15 @@ func _input(event):
 		transform_grid()
 		transform_done = true
 
+#Defines the premade map
+func is_indestructible(row, column):
+	return false  # Example: Make every second cell in the first row indestructible
+
 func handle_click(position):
 	var row = int(position.y / cell_size.y)
 	var column = int(position.x / cell_size.x)
 	
-	if row >= 0 and row < rows and column >= 0 and column < columns:
+	if row >= 0 and row < rows and column >= 0 and column < columns and not is_indestructible(row, column):
 		var cell = cells[row][column]
 		toggle_texture(cell)
 
@@ -92,15 +98,30 @@ func transform_grid():
 				else:
 					new_cell_scene = preload("res://Materials/Wood/Wood1.tscn")
 			elif cell.texture == woodBeamH:
-				new_cell_scene = preload("res://Materials/Wood/WoodBeamH.tscn") # Assuming same scene for both static and dynamic for now
+				if is_static:
+					new_cell_scene = preload("res://Materials/Wood/staticWoodBeamH.tscn")
+				else:
+					new_cell_scene = preload("res://Materials/Wood/WoodBeamH.tscn") # Assuming same scene for both static and dynamic for now
 			elif cell.texture == woodBeamV:
-				new_cell_scene = preload("res://Materials/Wood/WoodBeamV.tscn") # Adjust as necessary
+				if is_static:
+					new_cell_scene = preload("res://Materials/Wood/staticWoodBeamV.tscn")
+				else:
+					new_cell_scene = preload("res://Materials/Wood/WoodBeamV.tscn") # Adjust as necessary
 			elif cell.texture == stoneBlock:
-				new_cell_scene = preload("res://Materials/Stone/Stone1.tscn")
+				if is_static:
+					new_cell_scene = preload("res://Materials/Stone/staticStone.tscn")
+				else:
+					new_cell_scene = preload("res://Materials/Stone/Stone1.tscn")
 			elif cell.texture == stoneBeamH:
-				new_cell_scene = preload("res://Materials/Stone/StoneBeamH.tscn") # Adjust as necessary
+				if is_static:
+					new_cell_scene = preload("res://Materials/Stone/staticStoneBeamH.tscn")
+				else:
+					new_cell_scene = preload("res://Materials/Stone/StoneBeamH.tscn") # Adjust as necessary
 			elif cell.texture == stoneBeamV:
-				new_cell_scene = preload("res://Materials/Stone/StoneBeamV.tscn") # Adjust as necessary
+				if is_static:
+					new_cell_scene = preload("res://Materials/Stone/staticStoneBeamV.tscn")
+				else:
+					new_cell_scene = preload("res://Materials/Stone/StoneBeamV.tscn") # Adjust as necessary
 			else:
 				cells_to_delete.append(cell)
 				continue
@@ -157,25 +178,26 @@ func connect_adjacent_objects_with_joints():
 
 
 func create_joint(body_a, body_b):
-	print("A: " + str(body_a.get_path()))
-	print("B: " + str(body_b.get_path()))
-	
-	var joint = PinJoint2D.new()
-	body_a.add_child(joint)
-	joint.node_a = body_a.get_path()
-	joint.node_b = body_b.get_path()
-	
-	joint.disable_collision = false
+	if not ((body_a.vertical and body_b.horizontal) or (body_b.vertical and body_a.horizontal)):
+		print("A: " + str(body_a.get_path()))
+		print("B: " + str(body_b.get_path()))
+		
+		var joint = PinJoint2D.new()
+		body_a.add_child(joint)
+		joint.node_a = body_a.get_path()
+		joint.node_b = body_b.get_path()
+		
+		joint.disable_collision = false
 
-	
-	print("JointA:" + str(joint.node_a))
-	print("JointB:" + str(joint.node_b))
-	
-	
-	joint.softness = 0.5  # Makes the joint more rigid
-	joint.angular_limit_enabled = true  # Enables angular limits
-	#joint.angular_limit_lower = 0  # Lower limit of rotation in radians
-	#joint.angular_limit_upper = 0  # Upper limit of rotation in radians
+		
+		print("JointA:" + str(joint.node_a))
+		print("JointB:" + str(joint.node_b))
+		
+		
+		joint.softness = 0.5  # Makes the joint more rigid
+		joint.angular_limit_enabled = true  # Enables angular limits
+		#joint.angular_limit_lower = 0  # Lower limit of rotation in radians
+		#joint.angular_limit_upper = 0  # Upper limit of rotation in radians
 
 
 
